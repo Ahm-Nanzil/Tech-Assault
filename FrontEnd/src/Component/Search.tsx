@@ -1,43 +1,31 @@
-import React, { useState } from 'react';
+// SearchHeader.js
+
+import React from 'react';
 import { View, TextInput, StyleSheet } from 'react-native';
-import { Icon } from 'react-native-elements';
 
-const SearchInput = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const handleSearch = (query) => {
-    // Handle your search logic here
-    console.log('Search Query:', query);
-    setSearchQuery(query);
-  };
-
+const SearchHeader = () => {
   return (
-    <View style={styles.container}>
-      <Icon name="search" type="font-awesome" color="#999" size={20} />
-      <TextInput
-        style={styles.input}
-        placeholder="Search..."
-        value={searchQuery}
-        onChangeText={handleSearch}
-      />
+    <View style={styles.searchBarContainer}>
+      <TextInput style={styles.searchInput} placeholder="Search in TechAssult" />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+  searchBarContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    borderColor: '#ccc',
+    justifyContent: 'space-between',
     borderWidth: 1,
-    borderRadius: 5,
-    padding: 8,
+    margin: 10,
+    padding: 10,
+    borderRadius: 10,
+    borderColor: 'grey',
   },
-  input: {
+  searchInput: {
     flex: 1,
-    marginLeft: 8,
     fontSize: 16,
   },
 });
 
-export default SearchInput;
+export default SearchHeader;

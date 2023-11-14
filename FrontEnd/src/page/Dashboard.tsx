@@ -18,14 +18,14 @@ import SortProduct from "../Component/SortProduct";
 const Dashboard = () => {
   return (
     <SafeAreaView>
-      <View style={styles.mainContainer}>
+      {/* <View style={styles.mainContainer}>
         <FontAwesome5 name="grip-lines" size={14} color="black" />
         <TextInput placeholder="Search in TechAssult" style={styles.searchInput} />
         <Ionicons name="md-search-sharp" size={15} color="purple " />
-      </View>
+      </View> */}
       <Imageslider />
       <Products />
-      <SortProduct />
+      <SortProduct/>
       <FlashSale />
     </SafeAreaView>
   );

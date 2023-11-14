@@ -47,6 +47,251 @@ const FlashSale = () => {
       name: "Cream",
       image: "https://source.unsplash.com/1024x768/?lipstick",
     },
+    {
+      id: 1,
+      name: "Airpod",
+      image: "https://source.unsplash.com/1024x768/?airpod",
+    },
+    {
+      id: 2,
+      name: "Samsang Fridge",
+      image: "https://source.unsplash.com/1024x768/?fridge",
+    },
+    {
+      id: 3,
+      name: "Power Bank",
+      image: "https://source.unsplash.com/1024x768/?powerbank",
+    },
+    {
+      id: 4,
+      name: "Dextop",
+      image: "https://source.unsplash.com/1024x768/?pc",
+    },
+    {
+      id: 5,
+      name: "Lipstick",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
+    },
+    {
+      id: 6,
+      name: "Oil",
+      image: "https://source.unsplash.com/1024x768/?cosmetics",
+    },
+    {
+      id: 7,
+      name: "Cream",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
+    },
+    {
+      id: 1,
+      name: "Airpod",
+      image: "https://source.unsplash.com/1024x768/?airpod",
+    },
+    {
+      id: 2,
+      name: "Samsang Fridge",
+      image: "https://source.unsplash.com/1024x768/?fridge",
+    },
+    {
+      id: 3,
+      name: "Power Bank",
+      image: "https://source.unsplash.com/1024x768/?powerbank",
+    },
+    {
+      id: 4,
+      name: "Dextop",
+      image: "https://source.unsplash.com/1024x768/?pc",
+    },
+    {
+      id: 5,
+      name: "Lipstick",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
+    },
+    {
+      id: 6,
+      name: "Oil",
+      image: "https://source.unsplash.com/1024x768/?cosmetics",
+    },
+    {
+      id: 7,
+      name: "Cream",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
+    },
+    {
+      id: 1,
+      name: "Airpod",
+      image: "https://source.unsplash.com/1024x768/?airpod",
+    },
+    {
+      id: 2,
+      name: "Samsang Fridge",
+      image: "https://source.unsplash.com/1024x768/?fridge",
+    },
+    {
+      id: 3,
+      name: "Power Bank",
+      image: "https://source.unsplash.com/1024x768/?powerbank",
+    },
+    {
+      id: 4,
+      name: "Dextop",
+      image: "https://source.unsplash.com/1024x768/?pc",
+    },
+    {
+      id: 5,
+      name: "Lipstick",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
+    },
+    {
+      id: 6,
+      name: "Oil",
+      image: "https://source.unsplash.com/1024x768/?cosmetics",
+    },
+    {
+      id: 7,
+      name: "Cream",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
+    },
+    {
+      id: 1,
+      name: "Airpod",
+      image: "https://source.unsplash.com/1024x768/?airpod",
+    },
+    {
+      id: 2,
+      name: "Samsang Fridge",
+      image: "https://source.unsplash.com/1024x768/?fridge",
+    },
+    {
+      id: 3,
+      name: "Power Bank",
+      image: "https://source.unsplash.com/1024x768/?powerbank",
+    },
+    {
+      id: 4,
+      name: "Dextop",
+      image: "https://source.unsplash.com/1024x768/?pc",
+    },
+    {
+      id: 5,
+      name: "Lipstick",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
+    },
+    {
+      id: 6,
+      name: "Oil",
+      image: "https://source.unsplash.com/1024x768/?cosmetics",
+    },
+    {
+      id: 7,
+      name: "Cream",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
+    },
+    {
+      id: 1,
+      name: "Airpod",
+      image: "https://source.unsplash.com/1024x768/?airpod",
+    },
+    {
+      id: 2,
+      name: "Samsang Fridge",
+      image: "https://source.unsplash.com/1024x768/?fridge",
+    },
+    {
+      id: 3,
+      name: "Power Bank",
+      image: "https://source.unsplash.com/1024x768/?powerbank",
+    },
+    {
+      id: 4,
+      name: "Dextop",
+      image: "https://source.unsplash.com/1024x768/?pc",
+    },
+    {
+      id: 5,
+      name: "Lipstick",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
+    },
+    {
+      id: 6,
+      name: "Oil",
+      image: "https://source.unsplash.com/1024x768/?cosmetics",
+    },
+    {
+      id: 7,
+      name: "Cream",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
+    },
+    {
+      id: 1,
+      name: "Airpod",
+      image: "https://source.unsplash.com/1024x768/?airpod",
+    },
+    {
+      id: 2,
+      name: "Samsang Fridge",
+      image: "https://source.unsplash.com/1024x768/?fridge",
+    },
+    {
+      id: 3,
+      name: "Power Bank",
+      image: "https://source.unsplash.com/1024x768/?powerbank",
+    },
+    {
+      id: 4,
+      name: "Dextop",
+      image: "https://source.unsplash.com/1024x768/?pc",
+    },
+    {
+      id: 5,
+      name: "Lipstick",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
+    },
+    {
+      id: 6,
+      name: "Oil",
+      image: "https://source.unsplash.com/1024x768/?cosmetics",
+    },
+    {
+      id: 7,
+      name: "Cream",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
+    },
+    {
+      id: 1,
+      name: "Airpod",
+      image: "https://source.unsplash.com/1024x768/?airpod",
+    },
+    {
+      id: 2,
+      name: "Samsang Fridge",
+      image: "https://source.unsplash.com/1024x768/?fridge",
+    },
+    {
+      id: 3,
+      name: "Power Bank",
+      image: "https://source.unsplash.com/1024x768/?powerbank",
+    },
+    {
+      id: 4,
+      name: "Dextop",
+      image: "https://source.unsplash.com/1024x768/?pc",
+    },
+    {
+      id: 5,
+      name: "Lipstick",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
+    },
+    {
+      id: 6,
+      name: "Oil",
+      image: "https://source.unsplash.com/1024x768/?cosmetics",
+    },
+    {
+      id: 7,
+      name: "Cream",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
+    },
   ];
 
   return (
@@ -54,7 +299,7 @@ const FlashSale = () => {
       <FlatList
         contentContainerStyle={styles.scrollViewContent}
         data={cosmetics}
-        numColumns={2}
+        numColumns={5}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <View style={styles.itemContainer}>
@@ -84,7 +329,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   itemContainer: {
-    width: "45%",
+    width: "17%",
     margin: 5,
     backgroundColor: "white",
     borderRadius: 5,
@@ -92,16 +337,16 @@ const styles = StyleSheet.create({
   },
   images: {
     width: "100%",
-    height: 150,
+    height: 50,
     resizeMode: "cover",
     borderRadius: 5,
   },
   textContainer: {
-    padding: 10,
+    padding: 1,
   },
   imageName: {
     marginTop: 5,
-    fontSize: 16,
+    fontSize: 10,
     textAlign: "center",
   },
 });
