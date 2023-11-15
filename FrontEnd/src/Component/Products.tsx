@@ -3,7 +3,7 @@ import React from "react";
 import { ScrollView } from "react-native";
 
 const Products = () => {
-  const cosmetics = [
+  const Electronics = [
     {
       id: 1,
       name: "Smartphones & Accessories",
@@ -44,7 +44,7 @@ const Products = () => {
     <View>
       <Text style={styles.heading}>Categories</Text>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        {cosmetics.map((item, index) => (
+        {Electronics.map((item, index) => (
           <View key={index}>
             <Image source={{ uri: item.image }} style={styles.images} />
             <Text style={styles.imageName}>{item.name}</Text>

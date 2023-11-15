@@ -7,17 +7,11 @@ import { AuthContext, AuthProvider } from "./src/providers/AuthProvider";
 import Dashboard from "./src/page/Dashboard";
 import CartPage from "./src/page/Cart";
 import Account from "./src/page/Account";
+import { Text,View } from "react-native";
 
-const stack = createStackNavigator();
-const bottom_tab = createBottomTabNavigator();
+const BottomTab = createBottomTabNavigator();
 
-const BasicDashboardScreen = () => {
-  return (
-    <stack.Navigator screenOptions={{headerShown: false}}>
-      <stack.Screen name='Dashboard' component={Dashboard}></stack.Screen>
-    </stack.Navigator>
-  )
-};
+
 
 const App = () => {
 return(
@@ -47,7 +41,7 @@ return(
 //   </AuthProvider>
 
 <NavigationContainer>
-      <bottom_tab.Navigator
+      <BottomTab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ color, size }) => {
             let iconName;
@@ -59,7 +53,7 @@ return(
               iconName = "shopping-cart"; // Replace with the name of your cart icon
               return <FontAwesome name={iconName} size={size} color={color} />;
             } else if (route.name === "Account") {
-              iconName = "user"; // Replace with the name of your account icon
+              iconName = "person-circle-outline"; // Replace with the name of your account icon
               return <Ionicons name={iconName} size={size} color={color} />;
             }
           },
@@ -67,19 +61,23 @@ return(
         tabBarOptions={{
           activeTintColor: "tomato",
           inactiveTintColor: "gray",
+          style: {
+            display: "flex",
+          },
         }}
       >
-        <bottom_tab.Screen
+        <BottomTab.Screen
           name="TechAssult"
-          component={BasicDashboardScreen}
+          component={Dashboard}
           options={{ tabBarLabel: "Home" }}
         />
-        <bottom_tab.Screen name="Chekout From here" component={CartPage} 
+        <BottomTab.Screen
+          name="Chekout From here"
+          component={CartPage}
           options={{ tabBarLabel: "Cart" }}
-
         />
-        <bottom_tab.Screen name="Account" component={Account} />
-      </bottom_tab.Navigator>
+        <BottomTab.Screen name="Account" component={Account} />
+      </BottomTab.Navigator>
     </NavigationContainer>
 )
 }

@@ -3,9 +3,7 @@ import React from "react";
 import { ScrollView } from "react-native";
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import ProductDetails from "./ProductDetails";
-import { useNavigation } from '@react-navigation/native';
-
+import ShowProducts from "./ShowProducts";
 
 export interface CosmoProducts {
   product_id: number;
@@ -17,8 +15,19 @@ export interface CosmoProducts {
 
 
 
+const Stack = createStackNavigator();
+
 const FlashSale = () => {
-  const cosmetics = [
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="FlashSaleScreen">
+        <Stack.Screen name="FlashSaleScreen" component={FlashSaleScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
+const FlashSaleScreen = () => {
+  const ElectronicsItem = [
     {
       id: 1,
       name: "Airpod",
@@ -40,64 +49,19 @@ const FlashSale = () => {
       image: "https://source.unsplash.com/1024x768/?pc",
     },
     {
-      id: 1,
-      name: "Airpod",
-      image: "https://source.unsplash.com/1024x768/?airpod",
+      id: 5,
+      name: "Lipstick",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
     },
     {
-      id: 2,
-      name: "Samsang Fridge",
-      image: "https://source.unsplash.com/1024x768/?fridge",
+      id: 6,
+      name: "Oil",
+      image: "https://source.unsplash.com/1024x768/?cosmetics",
     },
     {
-      id: 3,
-      name: "Power Bank",
-      image: "https://source.unsplash.com/1024x768/?powerbank",
-    },
-    {
-      id: 4,
-      name: "Dextop",
-      image: "https://source.unsplash.com/1024x768/?pc",
-    },
-    {
-      id: 1,
-      name: "Airpod",
-      image: "https://source.unsplash.com/1024x768/?airpod",
-    },
-    {
-      id: 2,
-      name: "Samsang Fridge",
-      image: "https://source.unsplash.com/1024x768/?fridge",
-    },
-    {
-      id: 3,
-      name: "Power Bank",
-      image: "https://source.unsplash.com/1024x768/?powerbank",
-    },
-    {
-      id: 4,
-      name: "Dextop",
-      image: "https://source.unsplash.com/1024x768/?pc",
-    },
-    {
-      id: 1,
-      name: "Airpod",
-      image: "https://source.unsplash.com/1024x768/?airpod",
-    },
-    {
-      id: 2,
-      name: "Samsang Fridge",
-      image: "https://source.unsplash.com/1024x768/?fridge",
-    },
-    {
-      id: 3,
-      name: "Power Bank",
-      image: "https://source.unsplash.com/1024x768/?powerbank",
-    },
-    {
-      id: 4,
-      name: "Dextop",
-      image: "https://source.unsplash.com/1024x768/?pc",
+      id: 7,
+      name: "Cream",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
     },
     {
       id: 1,
@@ -120,24 +84,19 @@ const FlashSale = () => {
       image: "https://source.unsplash.com/1024x768/?pc",
     },
     {
-      id: 1,
-      name: "Airpod",
-      image: "https://source.unsplash.com/1024x768/?airpod",
+      id: 5,
+      name: "Lipstick",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
     },
     {
-      id: 2,
-      name: "Samsang Fridge",
-      image: "https://source.unsplash.com/1024x768/?fridge",
+      id: 6,
+      name: "Oil",
+      image: "https://source.unsplash.com/1024x768/?cosmetics",
     },
     {
-      id: 3,
-      name: "Power Bank",
-      image: "https://source.unsplash.com/1024x768/?powerbank",
-    },
-    {
-      id: 4,
-      name: "Dextop",
-      image: "https://source.unsplash.com/1024x768/?pc",
+      id: 7,
+      name: "Cream",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
     },
     {
       id: 1,
@@ -160,24 +119,19 @@ const FlashSale = () => {
       image: "https://source.unsplash.com/1024x768/?pc",
     },
     {
-      id: 1,
-      name: "Airpod",
-      image: "https://source.unsplash.com/1024x768/?airpod",
+      id: 5,
+      name: "Lipstick",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
     },
     {
-      id: 2,
-      name: "Samsang Fridge",
-      image: "https://source.unsplash.com/1024x768/?fridge",
+      id: 6,
+      name: "Oil",
+      image: "https://source.unsplash.com/1024x768/?cosmetics",
     },
     {
-      id: 3,
-      name: "Power Bank",
-      image: "https://source.unsplash.com/1024x768/?powerbank",
-    },
-    {
-      id: 4,
-      name: "Dextop",
-      image: "https://source.unsplash.com/1024x768/?pc",
+      id: 7,
+      name: "Cream",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
     },
     {
       id: 1,
@@ -200,24 +154,19 @@ const FlashSale = () => {
       image: "https://source.unsplash.com/1024x768/?pc",
     },
     {
-      id: 1,
-      name: "Airpod",
-      image: "https://source.unsplash.com/1024x768/?airpod",
+      id: 5,
+      name: "Lipstick",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
     },
     {
-      id: 2,
-      name: "Samsang Fridge",
-      image: "https://source.unsplash.com/1024x768/?fridge",
+      id: 6,
+      name: "Oil",
+      image: "https://source.unsplash.com/1024x768/?cosmetics",
     },
     {
-      id: 3,
-      name: "Power Bank",
-      image: "https://source.unsplash.com/1024x768/?powerbank",
-    },
-    {
-      id: 4,
-      name: "Dextop",
-      image: "https://source.unsplash.com/1024x768/?pc",
+      id: 7,
+      name: "Cream",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
     },
     {
       id: 1,
@@ -240,6 +189,21 @@ const FlashSale = () => {
       image: "https://source.unsplash.com/1024x768/?pc",
     },
     {
+      id: 5,
+      name: "Lipstick",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
+    },
+    {
+      id: 6,
+      name: "Oil",
+      image: "https://source.unsplash.com/1024x768/?cosmetics",
+    },
+    {
+      id: 7,
+      name: "Cream",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
+    },
+    {
       id: 1,
       name: "Airpod",
       image: "https://source.unsplash.com/1024x768/?airpod",
@@ -259,17 +223,98 @@ const FlashSale = () => {
       name: "Dextop",
       image: "https://source.unsplash.com/1024x768/?pc",
     },
-  
+    {
+      id: 5,
+      name: "Lipstick",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
+    },
+    {
+      id: 6,
+      name: "Oil",
+      image: "https://source.unsplash.com/1024x768/?cosmetics",
+    },
+    {
+      id: 7,
+      name: "Cream",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
+    },
+    {
+      id: 1,
+      name: "Airpod",
+      image: "https://source.unsplash.com/1024x768/?airpod",
+    },
+    {
+      id: 2,
+      name: "Samsang Fridge",
+      image: "https://source.unsplash.com/1024x768/?fridge",
+    },
+    {
+      id: 3,
+      name: "Power Bank",
+      image: "https://source.unsplash.com/1024x768/?powerbank",
+    },
+    {
+      id: 4,
+      name: "Dextop",
+      image: "https://source.unsplash.com/1024x768/?pc",
+    },
+    {
+      id: 5,
+      name: "Lipstick",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
+    },
+    {
+      id: 6,
+      name: "Oil",
+      image: "https://source.unsplash.com/1024x768/?cosmetics",
+    },
+    {
+      id: 7,
+      name: "Cream",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
+    },
+    {
+      id: 1,
+      name: "Airpod",
+      image: "https://source.unsplash.com/1024x768/?airpod",
+    },
+    {
+      id: 2,
+      name: "Samsang Fridge",
+      image: "https://source.unsplash.com/1024x768/?fridge",
+    },
+    {
+      id: 3,
+      name: "Power Bank",
+      image: "https://source.unsplash.com/1024x768/?powerbank",
+    },
+    {
+      id: 4,
+      name: "Dextop",
+      image: "https://source.unsplash.com/1024x768/?pc",
+    },
+    {
+      id: 5,
+      name: "Lipstick",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
+    },
+    {
+      id: 6,
+      name: "Oil",
+      image: "https://source.unsplash.com/1024x768/?cosmetics",
+    },
+    {
+      id: 7,
+      name: "Cream",
+      image: "https://source.unsplash.com/1024x768/?lipstick",
+    },
   ];
-
-  const navigation = useNavigation();
-
 
   return (
     <ScrollView style={styles.container}>
       <FlatList
         contentContainerStyle={styles.scrollViewContent}
-        data={cosmetics}
+        data={ElectronicsItem}
         numColumns={5}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (

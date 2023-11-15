@@ -20,13 +20,12 @@ const  CartPage=()=> {
   );
 }
 
-const CartPageScreen = () => {
+const CartPageScreen = ({ route }) => {
   // Sample data for cart items
-  const [cartItems, setCartItems] = useState([
-    { id: '1', name: 'Product 1', price: 25.99, quantity: 2, image: { uri: 'https://source.unsplash.com/1024x768/?smartphone' } },
-    { id: '2', name: 'Product 2', price: 19.99, quantity: 1, image: { uri: 'https://source.unsplash.com/1024x768/?smartphone' } },
-    // Add more items as needed
-  ]);
+  const { params } = route;
+  const cartItems = params?.cartItems || [];
+
+
 
   // Function to remove an item from the cart
   const removeFromCart = (itemId) => {
@@ -57,14 +56,14 @@ const CartPageScreen = () => {
         <Text>Quantity: {item.quantity}</Text>
       </View>
       <View style={styles.buttonsContainer}>
+        <TouchableOpacity onPress={() => removeFromCart(item.id)}>
+          <Text style={styles.removeButton}>Remove</Text>
+        </TouchableOpacity>
         <TouchableOpacity onPress={() => updateQuantity(item.id, item.quantity + 1)}>
           <Text style={styles.updateButton}>+</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => updateQuantity(item.id, Math.max(1, item.quantity - 1))}>
           <Text style={styles.updateButton}>-</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => removeFromCart(item.id)}>
-          <Text style={styles.removeButton}>Remove</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -133,4 +132,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CartPage;
+export {CartPage, CartPageScreen};

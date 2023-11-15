@@ -14,8 +14,26 @@ import FlashSale from "../Component/FlashSale";
 import { Pressable } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import SortProduct from "../Component/SortProduct";
+import { createStackNavigator } from '@react-navigation/stack';
+import ProductDetails from "../Component/ProductDetails";
+import PassingValue from "../Component/passingValue";
+
+const Stack = createStackNavigator();
 
 const Dashboard = () => {
+  return (
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name='Dashboard' component={BasicDashboardScreen}></Stack.Screen>
+      <Stack.Screen name="ProductDetails" component={ProductDetails} />
+      <Stack.Screen name="PassingValue" component={PassingValue} />
+
+
+    </Stack.Navigator>
+    
+  )
+};
+
+const BasicDashboardScreen = () => {
   return (
     <SafeAreaView>
       {/* <View style={styles.mainContainer}>
