@@ -1,12 +1,8 @@
 import React from "react";
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import CounterPage from "./src/page/CounterPage";
-import LoginPage from "./src/Account Component/LoginPage";
-import SettingsPage from "./src/page/SettingPage";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
-import NationalizePage from "./src/page/NationalizePage";
 import { AuthContext, AuthProvider } from "./src/providers/AuthProvider";
 import Dashboard from "./src/page/Dashboard";
 import CartPage from "./src/page/Cart";
@@ -59,7 +55,7 @@ return(
             if (route.name === "TechAssult") {
               iconName = "home"; // Replace with the name of your home icon
               return <FontAwesome name={iconName} size={size} color={color} />;
-            } else if (route.name === "Cart") {
+            } else if (route.name === "Chekout From here") {
               iconName = "shopping-cart"; // Replace with the name of your cart icon
               return <FontAwesome name={iconName} size={size} color={color} />;
             } else if (route.name === "Account") {
@@ -78,7 +74,10 @@ return(
           component={BasicDashboardScreen}
           options={{ tabBarLabel: "Home" }}
         />
-        <bottom_tab.Screen name="Cart" component={CartPage} />
+        <bottom_tab.Screen name="Chekout From here" component={CartPage} 
+          options={{ tabBarLabel: "Cart" }}
+
+        />
         <bottom_tab.Screen name="Account" component={Account} />
       </bottom_tab.Navigator>
     </NavigationContainer>
