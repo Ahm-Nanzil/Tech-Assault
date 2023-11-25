@@ -33,31 +33,29 @@ const LoginPage = (props: any) => {
     }
 
     const showLoginComponent = () => {
-        return(
-            <View>
+        return (
+            <View style={style.loginBox}>
                 <Image
-                    source={require('./TechAssultLogo.png').default } // Update with the correct path to your image
+                    source={require('./TechAssultLogo.png').default}
                     style={style.imageStyle}
-                    />
-
+                />
+    
                 <Text>Sign In To Your Account</Text>
                 <View>
-                    <TextInput style={style.inputStyle} onChangeText={setEmail} placeholder="Enter your email"></TextInput>
+                    <TextInput style={style.inputStyle} onChangeText={setEmail} placeholder="Enter your email" />
                 </View>
                 <View>
-                    <TextInput style={style.inputStyle} onChangeText={setPassword} placeholder="Enter Password" secureTextEntry></TextInput>
+                    <TextInput style={style.inputStyle} onChangeText={setPassword} placeholder="Enter Password" secureTextEntry />
                 </View>
-                <View>
-                    <Button title='Submit' onPress={handleSubmit}></Button>
+                <View style={style.buttonContainer}>
+                    <View style={style.buttonBox}>
+                        <Button title='Login' onPress={handleSubmit} color='tomato' />
+                    </View>
                 </View>
-
-                {/* <View>
-                    <Button title='BACK' onPress={navHandler}></Button>
-                </View> */}
             </View>
-        
-        )
-    }
+        );
+    };
+    
 
     return (
         <View style={style.mainContainer}>
@@ -70,13 +68,16 @@ const style = StyleSheet.create({
     mainContainer: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor:'tomato',
+        width:'90%',
     },
     counterContainer: {
         fontWeight: "700",
         color: "red",
         height: 40,
-        margin: 5
+        margin: 5,
+        
     },
     buttonContainer: {
         flexDirection: 'row',
@@ -104,6 +105,12 @@ const style = StyleSheet.create({
         
         border:'black',
       },
+      loginBox: {
+        backgroundColor: 'white',
+        borderRadius: 8,
+        padding: 20, // Adjust the padding as needed
+        alignItems: 'center',
+    },
 
 })
 

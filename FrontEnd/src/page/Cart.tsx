@@ -21,19 +21,15 @@ const  CartPage=()=> {
 }
 
 const CartPageScreen = () => {
-  // Sample data for cart items
   const [cartItems, setCartItems] = useState([
     { id: '1', name: 'Product 1', price: 25.99, quantity: 2, image: { uri: 'https://source.unsplash.com/1024x768/?smartphone' } },
     { id: '2', name: 'Product 2', price: 19.99, quantity: 1, image: { uri: 'https://source.unsplash.com/1024x768/?smartphone' } },
-    // Add more items as needed
   ]);
 
-  // Function to remove an item from the cart
   const removeFromCart = (itemId) => {
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
   };
 
-  // Function to update the quantity of an item in the cart
   const updateQuantity = (itemId, newQuantity) => {
     setCartItems((prevItems) =>
       prevItems.map((item) =>
@@ -42,12 +38,10 @@ const CartPageScreen = () => {
     );
   };
 
-  // Calculate the total price of items in the cart
   const calculateTotal = () => {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
   };
 
-  // Render each item in the cart
   const renderItem = ({ item }) => (
     <View style={styles.cartItem}>
       <Image source={item.image} style={styles.productImage} />
@@ -73,7 +67,6 @@ const CartPageScreen = () => {
   const navigation = useNavigation();
 
   const handleCheckout = () => {
-    // Navigating to the CheckoutPage and passing the total as a parameter
     navigation.navigate('checkout', { total: calculateTotal() });
   };
 

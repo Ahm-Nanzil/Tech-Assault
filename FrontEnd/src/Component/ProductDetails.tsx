@@ -1,6 +1,3 @@
-// ProductDetails.js
-
-import React, { useState } from 'react';
 import { View, Text, Image, StyleSheet, Button, Alert } from 'react-native';
 
 const ProductDetails = ({ route, navigation }) => {
@@ -10,7 +7,6 @@ const ProductDetails = ({ route, navigation }) => {
 
     Alert.alert('Added to Cart', `${product.name} has been added to your cart!`);
 
-    // navigation.navigate('PassingValue', { total: 12345678 });
     
     navigation.navigate("Chekout From here", {
       screen: "CartPageScreen",
@@ -27,7 +23,7 @@ const ProductDetails = ({ route, navigation }) => {
         <Text style={styles.productName}>{product.name}</Text>
         <Text style={styles.productDescription}>{product.description}</Text>
         <Text style={styles.productPrice}>Price: ${product.price}</Text>
-        <Button title="Add to Cart" onPress={addToCart} />
+        <Button title="Add to Cart" onPress={addToCart} color="tomato" />
       </View>
     </View>
   );

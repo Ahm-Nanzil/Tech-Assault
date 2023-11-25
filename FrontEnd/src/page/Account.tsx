@@ -1,16 +1,15 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import { View, Text, StyleSheet,TouchableOpacity } from 'react-native';
-import { FontAwesome} from "@expo/vector-icons";
+import { FontAwesome,Ionicons} from "@expo/vector-icons";
 
 import Profile from '../Account Component/Profile';
-import Order from '../Account Component/OrderPage';
-import Favourite from '../Account Component/FavouritePage';
+import OrderHistoryPage from '../Account Component/OrderPage';
+import FavouritePage from '../Account Component/FavouritePage';
 import CreditCuppon from '../Account Component/Credit&CupponPage';
 import InviteFriends from '../Account Component/InviteFriendsPage';
-import ShippingAddress from '../Account Component/ShppingAddressPage';
+import ShippingAddressPage from '../Account Component/ShppingAddressPage';
 import AccountSetting from '../Account Component/AccountSettingPage';
 import LoginPage from '../Account Component/LoginPage';
-
 
 
 function ProfileScreen() {
@@ -24,7 +23,7 @@ function ProfileScreen() {
   function OrderScreen() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Order />
+        <OrderHistoryPage />
       </View>
     );
   }
@@ -32,7 +31,7 @@ function ProfileScreen() {
 function FavouriteScreen() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Favourite />
+        <FavouritePage />
       </View>
     );
   }
@@ -56,7 +55,7 @@ function InviteFriendScreen() {
 function ShippingScreen() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <ShippingAddress />
+        <ShippingAddressPage />
       </View>
     );
   }
@@ -112,31 +111,31 @@ function LoginScreen() {
         <View style={styles.usesinfo}>
             <TouchableOpacity style={styles.item} onPress={() => navigation.navigate('Orders')}>
               <Text style={styles.text}>My Orders</Text>
-              <FontAwesome name="user" color="white" size={20} style={styles.icon} />
+              <Ionicons name="archive-sharp" color="white" size={20} style={styles.icon} />
             </TouchableOpacity>
             <TouchableOpacity style={styles.item} onPress={() => navigation.navigate('Favourite')}>
               <Text style={styles.text}>My Favourite</Text>
-              <FontAwesome name="user" color="white" size={20} style={styles.icon} />
+              <FontAwesome name="star" color="white" size={20} style={styles.icon} />
             </TouchableOpacity>
             <TouchableOpacity style={styles.item} onPress={() => navigation.navigate('CreCup')}>
               <Text style={styles.text}>Credits & Cuppons</Text>
-              <FontAwesome name="user" color="white" size={20} style={styles.icon} />
+              <Ionicons name="card-sharp" color="white" size={20} style={styles.icon} />
             </TouchableOpacity>
             <TouchableOpacity style={styles.item} onPress={() => navigation.navigate('Friends')}>
               <Text style={styles.text}>Invite Friends</Text>
-              <FontAwesome name="user" color="white" size={20} style={styles.icon} />
+              <Ionicons name="add-circle-sharp" color="white" size={20} style={styles.icon} />
             </TouchableOpacity>
             <TouchableOpacity style={styles.item} onPress={() => navigation.navigate('Ship')}>
               <Text style={styles.text}>Shipping Address</Text>
-              <FontAwesome name="user" color="white" size={20} style={styles.icon} />
+              <Ionicons name="location-sharp" color="white" size={20} style={styles.icon} />
             </TouchableOpacity>
             <TouchableOpacity style={styles.item} onPress={() => navigation.navigate('AcSetting')}>
               <Text style={styles.text}>Account Setting</Text>
-              <FontAwesome name="user" color="white" size={20} style={styles.icon} />
+              <Ionicons name="settings-sharp" color="white" size={20} style={styles.icon} />
             </TouchableOpacity>
             <TouchableOpacity style={styles.item} onPress={() => navigation.navigate('Login')}>
               <Text style={styles.text}>Login</Text>
-              <FontAwesome name="user" color="white" size={20} style={styles.icon} />
+              <Ionicons name="log-in-sharp" color="white" size={20} style={styles.icon} />
             </TouchableOpacity>
         </View>
        
@@ -148,10 +147,11 @@ function LoginScreen() {
   const styles = StyleSheet.create({
     personalinfo: {
         height: 200,
-        width: '100%',
+        width: '90%',
         backgroundColor: 'tomato',
         justifyContent: 'center', // Center vertically
         alignItems: 'center', // Center horizontally
+        marginLeft:'4%',
       },
       title: {
         fontSize: 18,
@@ -173,7 +173,7 @@ function LoginScreen() {
       },
       icon: {
         marginRight: 30,
-        color:'black',
+        color:'gray',
       },
       text:{
         fontSize:17,

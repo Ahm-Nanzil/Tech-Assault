@@ -24,7 +24,7 @@ const ShippingAddressPage = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}>Account Setting</Text>
+      <Text style={styles.heading}>Shipping Address</Text>
       <TextInput
         style={styles.input}
         placeholder="Full Name"
@@ -72,7 +72,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    width:'90%',
   },
   heading: {
     fontSize: 24,

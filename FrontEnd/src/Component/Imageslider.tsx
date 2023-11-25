@@ -20,10 +20,10 @@ const HomePage = () => {
         inactiveDotColor="#90A4AE"
         ImageComponentStyle={{
           borderRadius: 6,
-          width: "100%", // Set the width of the image within the SliderBox
-          resizeMode: "cover", // Maintain the aspect ratio
+          width: "100%", 
+          resizeMode: "cover", 
         }}
-        sliderBoxHeight={100} // Set the height of the SliderBox container
+        sliderBoxHeight={100} 
       />
     </View>
   );
@@ -33,6 +33,5 @@ export default HomePage;
 
 const styles = StyleSheet.create({
   container: {
-    // Add any additional styles for the container if needed
   },
 });
