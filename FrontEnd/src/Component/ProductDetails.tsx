@@ -9,7 +9,7 @@ const ProductDetails = ({ route, navigation }) => {
 
     
     navigation.navigate("Chekout From here", {
-      screen: "CartPageScreen",
+      screen: "checkout",
       params: { total: 12345678  },
     });
   

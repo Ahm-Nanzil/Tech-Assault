@@ -1,23 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 export type IAuthContext = {
-    userName: String,
-    setUserName: (userName: string) => void,
-    isLoggedIn: Boolean,
-    setIsLoggedIn: (userName: boolean) => void;
-}
+  userName: string;
+  setUserName: (userName: string) => void;
+  isLoggedIn: boolean;
+  setIsLoggedIn: (isLoggedIn: boolean) => void;
+  logout: () => void;
+};
 
-const AuthContext = React.createContext<IAuthContext | null> (null)
-const AuthProvider = (props:any) =>{
-    const [userName, setUserName] = useState('');
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+const AuthContext = React.createContext<IAuthContext | null>(null);
 
-    return(
-        <AuthContext.Provider value={{userName, setUserName, isLoggedIn, setIsLoggedIn}}>
-            {props.children}
-        </AuthContext.Provider>
-    )
+const AuthProvider = (props: any) => {
+  const [userName, setUserName] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-}
+  const logout = () => {
+    setUserName("");
+    setIsLoggedIn(false);
+  };
 
-export {AuthProvider, AuthContext};
+  return (
+    <AuthContext.Provider value={{ userName, setUserName, isLoggedIn, setIsLoggedIn, logout }}>
+      {props.children}
+    </AuthContext.Provider>
+  );
+};
+
+export { AuthProvider, AuthContext };

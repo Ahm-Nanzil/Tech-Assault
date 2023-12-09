@@ -1,7 +1,6 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import { View, Text, StyleSheet,TouchableOpacity } from 'react-native';
 import { FontAwesome,Ionicons} from "@expo/vector-icons";
-
 import Profile from '../Account Component/Profile';
 import OrderHistoryPage from '../Account Component/OrderPage';
 import FavouritePage from '../Account Component/FavouritePage';
@@ -9,7 +8,8 @@ import CreditCuppon from '../Account Component/Credit&CupponPage';
 import InviteFriends from '../Account Component/InviteFriendsPage';
 import ShippingAddressPage from '../Account Component/ShppingAddressPage';
 import AccountSetting from '../Account Component/AccountSettingPage';
-import LoginPage from '../Account Component/LoginPage';
+import { useContext } from 'react';
+import { AuthContext } from '../providers/AuthProvider';
 
 
 function ProfileScreen() {
@@ -55,7 +55,7 @@ function InviteFriendScreen() {
 function ShippingScreen() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <ShippingAddressPage />
+        <ShippingAddressPage route={undefined} />
       </View>
     );
   }
@@ -70,27 +70,41 @@ function AccountSettingScreen() {
 
  
 
-function LoginScreen() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <LoginPage />
-      </View>
-    );
+function LogoutScreen() {
+  const authContext = useContext(AuthContext);
+  return (
+    authContext?.logout()
+
+  );
   }
+  const handleApiCall = async () => {
+    try {
+      const response = await fetch('http://localhost:3000/user/ahmnanzil33@gmail.com');
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+  
+      const data = await response.json();
+      console.log('API Response:', data);
+    } catch (error) {
+      console.error('Error:', error.message);
+    }
+  };
+  
   
   function Account() {
     const Stack = createStackNavigator();
   
     return (
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Account" component={AccountScreen} />
+        <Stack.Screen name="AccountScreen" component={AccountScreen} />
         <Stack.Screen name="Orders" component={OrderScreen} />
         <Stack.Screen name="Favourite" component={FavouriteScreen} />
         <Stack.Screen name="CreCup" component={CreditCupponScreen} />
         <Stack.Screen name="Friends" component={InviteFriendScreen} />
         <Stack.Screen name="Ship" component={ShippingScreen} />
         <Stack.Screen name="AcSetting" component={AccountSettingScreen} />
-        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Logout" component={LogoutScreen} />
 
 
 
@@ -122,7 +136,7 @@ function LoginScreen() {
               <Ionicons name="card-sharp" color="white" size={20} style={styles.icon} />
             </TouchableOpacity>
             <TouchableOpacity style={styles.item} onPress={() => navigation.navigate('Friends')}>
-              <Text style={styles.text}>Invite Friends</Text>
+              <Text style={styles.text}>Invite Friends through APi</Text>
               <Ionicons name="add-circle-sharp" color="white" size={20} style={styles.icon} />
             </TouchableOpacity>
             <TouchableOpacity style={styles.item} onPress={() => navigation.navigate('Ship')}>
@@ -133,10 +147,15 @@ function LoginScreen() {
               <Text style={styles.text}>Account Setting</Text>
               <Ionicons name="settings-sharp" color="white" size={20} style={styles.icon} />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.item} onPress={() => navigation.navigate('Login')}>
-              <Text style={styles.text}>Login</Text>
+            <TouchableOpacity style={styles.item} onPress={() => navigation.navigate('Logout')}>
+              <Text style={styles.text}>Logout</Text>
               <Ionicons name="log-in-sharp" color="white" size={20} style={styles.icon} />
             </TouchableOpacity>
+            <TouchableOpacity style={styles.item} onPress={handleApiCall}>
+              <Text style={styles.text}>Extra API Call</Text>
+              <Ionicons name="code-slash" color="white" size={20} style={styles.icon} />
+            </TouchableOpacity>
+
         </View>
        
       </View>

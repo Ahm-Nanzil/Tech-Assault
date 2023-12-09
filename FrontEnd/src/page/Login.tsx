@@ -1,28 +1,39 @@
 import { Button, Text, View, StyleSheet, TextInput,Image } from "react-native";
-import React, { useState } from "react";
-import { all } from "axios";
-import logo from "./Pic/profile.jpg";
+import React, { useContext, useState } from "react";
+import { createStackNavigator } from "@react-navigation/stack";
+import { AuthContext } from "../providers/AuthProvider";
 
-const LoginPage = (props: any) => {
+
+const  LoginPage=()=> {
+    const Stack = createStackNavigator();
+  
+    return (
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Login" component={LoginPageScreen} />
+      </Stack.Navigator>
+    );
+  }
+
+const LoginPageScreen = (props: any) => {
 
     const [email, setEmail] = useState('Email');
     const [password, setPassword] = useState('****');
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const authContext = useContext(AuthContext);
 
     const handleSubmit = () => {
-        if(email == "abc@gmail.com" && password === "abc") {
-            console.log('Good work', email, password);
-            setIsLoggedIn(true);
-            props.navigation.navigate("Home");
+        if (email === "abc@gmail.com" && password === "abc") {
+          console.log('Good work', email, password);
+          authContext?.setIsLoggedIn(true);
+          authContext?.setUserName(email); // Assuming you want to store the username
+          props.navigation.navigate("TechAssult");
         } else {
-            console.log('Uha Still work to do...', email, password);
-            setIsLoggedIn(false);
+          console.log('Uha Still work to do...', email, password);
+          setIsLoggedIn(false);
         }
-    };
+      };
     
-    const navHandler = () => {
-        props.navigation.navigate("Counter");
-    }
+
 
     const showSuccessMessage = () => {
         return(
@@ -35,10 +46,7 @@ const LoginPage = (props: any) => {
     const showLoginComponent = () => {
         return (
             <View style={style.loginBox}>
-                <Image
-                    source={require('./TechAssultLogo.png').default}
-                    style={style.imageStyle}
-                />
+                
     
                 <Text>Sign In To Your Account</Text>
                 <View>
